@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J5</title>
+    <style>
+      .card{
+        border: 1px solid black;
+        width: fit-content;
+        padding: 0 20px;
+        display: inline-block;
+        margin: 10px 10px;
+      }
+    </style>
 </head>
 <body>
+  <div class="container">
+  </div>
     <script>
         let persons = `
         [
@@ -60,9 +71,25 @@
   }
 ]`
 let parsePersons = JSON.parse(persons);
+const cardContainer = document.querySelector(".container");
+
+function createCard(cardContainer,parsePersons,i){
+  const card = document.createElement("div")
+  card.classList.add("card")
+  const name = document.createElement("h1")
+  name.innerHTML = "Name - " + parsePersons[i].name;
+
+  const age = document.createElement("h3")
+  age.innerHTML = "Age - " + parsePersons[i].age;
+  card.appendChild(name)
+  card.appendChild(age)
+  cardContainer.appendChild(card)
+}
+
+// createCard(cardContainer,parsePersons,1)
 
 for(let i=0;i<parsePersons.length;i++){
-    console.log("name - "+parsePersons[i].name+", age - "+parsePersons[i].age)
+  createCard(cardContainer,parsePersons,i)
 }
     </script>
 </body>
