@@ -1,0 +1,33 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 97vh;
+    align-items: center;
+}
+
+.container{
+    background-color: #4B4453;
+    width: fit-content;
+    padding: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.input{
+    padding-bottom: 10px;
+    color: #FFC069;
+}
+.input-field{
+    margin-top: 5px;
+    width: 97%;
+}
+button{
+    width:100%;
+    background-color: #72B8AA;
+}
+h1{
+    align-self: center;
+    color: #EE9176;
+}
